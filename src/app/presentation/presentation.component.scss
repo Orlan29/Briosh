@@ -1,0 +1,39 @@
+$presentation-padding: 20px;
+$presentation-margin: $presentation-padding - 5px;
+$presentation-br: $presentation-margin;
+$presentation-color: rgb(83, 83, 83);
+
+.briosh {
+  &-presentation {
+    margin-top: $presentation-margin;
+    margin-bottom: $presentation-margin;
+    &-content {
+      padding-top: $presentation-padding;
+      padding-bottom: $presentation-padding;
+    }
+    &-title {
+      margin-top: $presentation-margin;
+      margin-bottom: $presentation-margin;
+      font-weight: bold;
+      font-size: 4.5rem;
+      color: darken($color: $presentation-color, $amount: 15);
+    }
+    &-text {
+      color: $presentation-color;
+      width: 80%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      font-size: 1.1rem;
+    }
+    &-bg {
+      background: url("../../assets/presentation_bg.jpg") no-repeat center center;
+      background-size: cover;
+      border-radius: $presentation-br;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      padding: $presentation-padding;
+    }
+  }
+}

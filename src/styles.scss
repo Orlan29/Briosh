@@ -1,1 +1,56 @@
-/* You can add global styles to this file, and also import other style files */
+$primary: rgb(235, 95, 45);
+$btn-color: #fff;
+
+body {
+  background-color: rgb(255, 241, 235);
+  font-family: 'Roboto', sans-serif;
+}
+
+.briosh {
+  &-mark {
+    padding: 0px 12px;
+    background-color: lighten($color: $primary, $amount: 7);
+    display: inline-block;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      transform: rotate(10deg);
+      background-color: darken($primary, $amount: 5);
+      z-index: -5;
+    }
+  }
+  &-dish {
+    border: 1px solid red;
+    margin-top: 8%;
+    margin-bottom: 8%;
+    &-card {
+      border-radius: 15px;
+      cursor: pointer;
+      &-container {
+        &-splited {
+
+        }
+      }
+      &-img {
+        border-radius: inherit;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  &-btn {
+    border: 1px solid $primary;
+    background-color: $primary;
+    color: $btn-color;
+    font-weight: 500;
+    &:hover {
+      background-color: darken($color: $primary, $amount: 10);
+      color: $btn-color;
+    }
+  }
+}

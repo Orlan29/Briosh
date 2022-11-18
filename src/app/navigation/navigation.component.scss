@@ -1,0 +1,33 @@
+$nav_link_color: rgb(80, 80, 80);
+$link-color: rgb(235, 95, 45);
+
+.briosh {
+  &-icon-btn {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: $nav_link_color;
+    padding: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  &-navigation {
+    & .nav {
+      &-item {
+        &.active {
+          border-bottom: 2px solid $link-color;
+        }
+      }
+      &-link {
+        color: $nav_link_color;
+      }
+    }
+    &-title {
+      font-family: 'Lobster', cursive;
+      font-size: 2rem;
+    }
+    &-container {
+      background-color: inherit !important;
+    }
+  }
+}
