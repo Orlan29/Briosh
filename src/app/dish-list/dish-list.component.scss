@@ -1,0 +1,52 @@
+.briosh {
+    &-dish {
+        margin-top: 8%;
+        margin-bottom: 8%;
+        &-list {
+            height: 100%;
+            display: grid;
+            grid: repeat(2, 1fr) / auto-flow;
+            column-gap: 10px;
+            row-gap: 10px;
+        }
+        &-card {
+            border-radius: 10px;
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+            &::after {
+                position: absolute;
+                content: "";
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                background-color: transparent;
+                border-radius: inherit;
+                z-index: -5;
+            }
+            &-img {
+                border-radius: inherit;
+                width: 100%;
+                height: auto;
+                transition: 250ms transform cubic-bezier(.12, .57, .92, .45);
+            }
+            &:hover {
+                &::after {
+                    background-color: rgba(0,0,0,0.25);
+                    z-index: 2;
+                }
+                & > .briosh-dish-card-img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+    &-btn.view-more {
+        width: 150px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+}

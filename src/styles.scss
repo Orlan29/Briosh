@@ -1,46 +1,46 @@
 $primary: rgb(235, 95, 45);
 $btn-color: #fff;
+$theme: rgb(255, 236, 228);
+
+@mixin markPseudo {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: rotate(10deg);
+  background-color: darken($primary, $amount: 5);
+  z-index: -5;
+}
 
 body {
-  background-color: rgb(255, 241, 235);
+  background-color:$theme;
   font-family: 'Roboto', sans-serif;
 }
 
 .briosh {
+  &-section {
+    &-title {
+      font-family: 'Lobster', cursive;
+      display: block;
+      background-color: lighten($color: $primary, $amount: 7);
+      width: 150px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      &::before {
+        @include markPseudo();
+      }
+    }
+  }
   &-mark {
     padding: 0px 12px;
     background-color: lighten($color: $primary, $amount: 7);
     display: inline-block;
     position: relative;
     &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      transform: rotate(10deg);
-      background-color: darken($primary, $amount: 5);
-      z-index: -5;
-    }
-  }
-  &-dish {
-    border: 1px solid red;
-    margin-top: 8%;
-    margin-bottom: 8%;
-    &-card {
-      border-radius: 15px;
-      cursor: pointer;
-      &-container {
-        &-splited {
-
-        }
-      }
-      &-img {
-        border-radius: inherit;
-        width: 100%;
-        height: auto;
-      }
+      @include markPseudo();
     }
   }
   &-btn {
